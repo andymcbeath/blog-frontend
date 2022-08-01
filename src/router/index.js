@@ -7,32 +7,22 @@ import LogoutView from "../views/LogoutView.vue";
 import PostsIndex from "../views/PostsIndex.vue";
 import PostsNew from "../views/PostsNew.vue";
 import PostsShow from "../views/PostsShow.vue";
+import PostsEdit from "../views/PostsEdit.vue";
+
 const routes = [
   {
     path: "/",
     name: "home",
     component: HomeView,
   },
-  {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
-  },
-  {
-    path: "/test",
-    name: "test",
-    component: TestView,
-  },
+  { path: "/test", name: "test", component: TestView },
   { path: "/signup", name: "signup", component: SignupView },
   { path: "/login", name: "login", component: LoginView },
   { path: "/logout", name: "logout", component: LogoutView },
   { path: "/posts", name: "posts-index", component: PostsIndex },
   { path: "/posts/new", name: "posts-new", component: PostsNew },
-  { path: "/posts/2", name: "posts-show", component: PostsShow },
+  { path: "/posts/:id", name: "posts-show", component: PostsShow },
+  { path: "/posts/:id/edit", name: "posts-edit", component: PostsEdit },
 ];
 
 const router = createRouter({

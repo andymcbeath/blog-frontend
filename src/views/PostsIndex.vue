@@ -1,5 +1,6 @@
 <script>
 import axios from "axios";
+
 export default {
   data: function () {
     return {
@@ -8,10 +9,10 @@ export default {
     };
   },
   created: function () {
-    this.postsIndex();
+    this.indexPosts();
   },
   methods: {
-    postsIndex: function () {
+    indexPosts: function () {
       axios.get("/posts.json").then((response) => {
         this.posts = response.data;
         console.log("All Posts:", this.posts);
