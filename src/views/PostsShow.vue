@@ -3,23 +3,25 @@ import axios from "axios";
 
 export default {
   data: function () {
-    return { posts: {},
+    return {
+      posts: {},
     };
   },
-  created: function()
-  axios.get("/posts/2.json").then((response) => {
-    this.recipe = response.data;
+  created: function () {
+    axios.get("/posts/2.json").then((response) => {
+      this.post = response.data;
+    });
   },
+  methods: {},
 };
 </script>
 
 <template>
-  <div class="recipes-show">
+  <div class="posts-show">
     <div class="container">
       <h1>{{ posts.title }}</h1>
       <p>{{ posts.body }}</p>
-      <p>{{ posts.title }}</p>
-      <p>{{ posts.title }}</p>
+      <router-link to="/posts">Back to all Posts</router-link>
     </div>
   </div>
 </template>

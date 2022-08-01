@@ -32,7 +32,7 @@ const routes = [
   { path: "/logout", name: "logout", component: LogoutView },
   { path: "/posts", name: "posts-index", component: PostsIndex },
   { path: "/posts/new", name: "posts-new", component: PostsNew },
-  { path: "/posts/show", name: "posts-show", component: PostsShow },
+  { path: "/posts/2", name: "posts-show", component: PostsShow },
 ];
 
 const router = createRouter({
